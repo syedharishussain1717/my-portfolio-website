@@ -1,8 +1,17 @@
 # Personal Portfolio Website
 
-A modern and responsive personal portfolio website built using the **MERN Stack**. The website showcases my skills, projects, education, and professional information through a clean and interactive user interface.
+A modern, responsive personal portfolio website built using the **MERN Stack**. The website showcases my skills, projects, education, and professional information through a clean and interactive user interface.
 
 The project includes a **React.js frontend**, **Node.js/Express backend**, and **MongoDB database** for handling and storing contact form submissions.
+
+## Live Demo
+
+**Frontend:**
+https://syed-haris-hussain-shah-portfolio-frontend.vercel.app
+
+**Backend API:**
+https://syed-haris-hussain-shah-portfolio-backend.vercel.app
+
 
 ## Features
 
@@ -15,7 +24,9 @@ The project includes a **React.js frontend**, **Node.js/Express backend**, and *
 * Contact messages stored in MongoDB
 * React Router navigation
 * Responsive design for desktop and mobile devices
-* REST API for communication between frontend and backend
+* REST API for frontend-backend communication
+* Deployed frontend and backend using Vercel
+* MongoDB Atlas for cloud database storage
 
 ## Technologies Used
 
@@ -40,6 +51,7 @@ The project includes a **React.js frontend**, **Node.js/Express backend**, and *
 ### Database
 
 * MongoDB
+* MongoDB Atlas
 * Mongoose
 * MongoDB Compass
 
@@ -48,13 +60,16 @@ The project includes a **React.js frontend**, **Node.js/Express backend**, and *
 * Git
 * GitHub
 * Visual Studio Code
+* Vercel
 
 ## Project Structure
 
 ```text
 my-portfolio/
+
 │
 ├── public/
+│
 ├── src/
 │   ├── components/
 │   ├── pages/
@@ -100,7 +115,7 @@ npm install
 
 ### 4. Install Backend Dependencies
 
-Move into the Server folder:
+Move into the `Server` folder:
 
 ```bash
 cd Server
@@ -120,20 +135,19 @@ Add your MongoDB connection string:
 
 ```env
 MONGO_URI=your_mongodb_connection_string
-PORT=5000
 ```
 
-> Never upload your `.env` file or database credentials to GitHub.
+> The backend uses port `5000` locally by default. Never upload your `.env` file or database credentials to GitHub.
 
 ### 6. Start the Backend
 
-Inside the `Server` folder:
+Inside the `Server` folder, run:
 
 ```bash
 npm start
 ```
 
-The backend will run on:
+The backend will run locally on:
 
 ```text
 http://localhost:5000
@@ -161,7 +175,7 @@ http://localhost:5173
 
 ## Contact Form
 
-The portfolio includes a functional contact form connected to the backend.
+The portfolio includes a functional contact form connected to the Express backend.
 
 The process works as follows:
 
@@ -174,7 +188,7 @@ Express REST API
        ↓
 Mongoose
        ↓
-MongoDB
+MongoDB Atlas
        ↓
 Message stored in database
 ```
@@ -186,33 +200,60 @@ The contact form stores:
 * Message
 * Creation date
 
+## Deployment
+
+The application is deployed using **Vercel**.
+
+The deployment consists of two Vercel projects:
+
+```text
+React/Vite Frontend
+       ↓
+     Vercel
+       ↓
+Express/Node.js Backend
+       ↓
+     Vercel
+       ↓
+MongoDB Atlas
+```
+
+The frontend communicates with the deployed Express backend through the REST API.
+
+Environment variables such as the MongoDB connection string are configured securely in Vercel and are not stored in the GitHub repository.
+
 ## Learning Objectives
 
 This project was developed to gain practical experience with full-stack web development, including:
 
-* Building interfaces with React
+* Building user interfaces with React
 * Client-side routing with React Router
 * Creating REST APIs with Express
 * Working with Node.js
 * Connecting applications to MongoDB
 * Using Mongoose for database operations
+* Working with MongoDB Atlas
 * Handling frontend-backend communication
-* Managing projects with Git and GitHub
+* Managing environment variables
+* Using Git and GitHub
+* Deploying full-stack applications with Vercel
 
 ## Future Improvements
 
-* Deploy the portfolio online
 * Add an admin dashboard
 * Add authentication and authorization
 * Improve animations and UI interactions
 * Add more projects and portfolio content
-* Expand backend functionality
+* Add additional backend functionality
+* Improve form validation and error handling
+* Add analytics and performance monitoring
 
 ## Author
 
-**Haris Shah**
+**Syed Haris Hussain Shah**
 
 Computer Science Undergraduate
+
 AI & Software Development | Database Systems
 
 ---
