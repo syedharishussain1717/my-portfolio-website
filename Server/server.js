@@ -13,59 +13,41 @@ app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
+// connect once, reuse across requests (serverless-friendly)
+async function connectDB() {
+    if (mongoose.connection.readyState === 1) return;
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("MongoDB connected successfully");
+}
+
+app.use(async (req, res, next) => {
+    try {
+        await connectDB();
+        next();
+    } catch (error) {
+        console.log("MongoDB connection failed", error);
+        res.status(500).json({ message: "DB connection failed", error: error.message });
+    }
+});
+
 app.get("/", (req, res) => {
     res.send("Backend is working!");
 });
 
 app.post("/api/contact", async (req, res) => {
-
-    console.log("Contact request received");
-    console.log("Data received:", req.body);
-
     try {
-
         const { email, subject, message } = req.body;
-
-        const newContact = new Contact({
-            email,
-            subject,
-            message
-        });
-
-        await newContact.save();
-
-        console.log("Message sent successfully");
-
-        res.status(201).json({
-            message: "Message sent successfully"
-        });
-
+        await new Contact({ email, subject, message }).save();
+        res.status(201).json({ message: "Message sent successfully" });
     } catch (error) {
-
-        console.log("ERROR SAVING MESSAGE:");
-        console.log(error);
-
-        res.status(500).json({
-            message: "Error saving message",
-            error: error.message
-        });
-
+        console.log("ERROR SAVING MESSAGE:", error);
+        res.status(500).json({ message: "Error saving message", error: error.message });
     }
-
 });
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => {
 
-        console.log("MongoDB connected successfully");
+// only listen when running locally
+if (require.main === module) {
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
 
-        app.listen(PORT, () => {
-            console.log(`Server running on port ${PORT}`);
-        });
-
-    })
-    .catch((error) => {
-
-        console.log("MongoDB connection failed");
-        console.log(error);
-
-    });
+module.exports = app;
