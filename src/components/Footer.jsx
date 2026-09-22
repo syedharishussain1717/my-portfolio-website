@@ -8,22 +8,22 @@ function Footer() {
       {/* Footer Links */}
       <div className="footer-links">
         <a
-          href="https://www.linkedin.com/in/yourusername/"
-          target="_blank"
+          href="#"
+          // target="_blank"
           rel="noopener noreferrer"
         >
           LinkedIn
         </a>
 
         <a
-          href="https://github.com/yourusername"
-          target="_blank"
+          href="#"
+          // target="_blank"
           rel="noopener noreferrer"
         >
           GitHub
         </a>
 
-        <a href="mailto:youremail@example.com">
+        <a href="#">
           Email
         </a>
       </div>
