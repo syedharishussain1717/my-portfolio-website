@@ -279,7 +279,7 @@ body {
 }
 
 .project-card {
-  width: calc(33.33% - 17px);
+  width: calc(50% - 17px);
 
   padding: 25px;
 
@@ -411,6 +411,7 @@ body {
   border-radius: 5px;
 
   font-size: 15px;
+  resize: none;
 }
 
 .contact-form input:focus,
