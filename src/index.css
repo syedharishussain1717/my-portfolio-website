@@ -27,6 +27,7 @@ body {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #333;
+  position: relative;
 }
 
 /* Logo */
@@ -35,6 +36,41 @@ body {
   color: #4dd9ff;
   font-size: 25px;
   font-weight: bold;
+}
+
+/* Menu Toggle Button (hidden on desktop) */
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+  width: 30px;
+}
+
+/* Each line of the hamburger icon */
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #eaf6fd;
+  transition: 0.3s ease;
+}
+
+/* When menu is open, turn the hamburger into an X */
+
+.menu-btn.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-btn.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* Navigation Tabs */
@@ -59,23 +95,38 @@ body {
 }
 
 
-
-
 /* Responsive Design */
 
 @media (max-width: 700px) {
 
   .navbar {
     padding: 20px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  /* Show the toggle button only on mobile */
+  .menu-btn {
+    display: flex;
   }
 
   .nav-links {
     width: 100%;
     flex-direction: column;
     gap: 15px;
+
+    /* Collapsed state: hidden with smooth transition */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  }
+
+  /* Expanded state: added by JS when menu is open */
+  .nav-links.open {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 20px;
   }
 }
 
@@ -472,184 +523,185 @@ body {
 
 /* -----------------------------------cta CSS */
 .cta {
-    margin: 60px 50px;
-    padding: 50px 20px;
-    text-align: center;
+  margin: 60px 50px;
+  padding: 50px 20px;
+  text-align: center;
 
-    border: 1px solid #4dd9ff;
-    border-radius: 8px;
+  border: 1px solid #4dd9ff;
+  border-radius: 8px;
 }
 
 .cta h2 {
-    color: #4dd9ff;
-    font-size: 30px;
-    margin-bottom: 15px;
+  color: #4dd9ff;
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 
 .cta p {
-    color: #eaf6fd;
-    margin-bottom: 25px;
+  color: #eaf6fd;
+  margin-bottom: 25px;
 }
 
 .cta a {
-    display: inline-block;
-    padding: 12px 25px;
+  display: inline-block;
+  padding: 12px 25px;
 
-    background-color: #4dd9ff;
-    color: #111;
+  background-color: #4dd9ff;
+  color: #111;
 
-    text-decoration: none;
-    border-radius: 5px;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 .cta a:hover {
-    background-color: transparent;
-    color: #4dd9ff;
-    border: 1px solid #4dd9ff;
+  background-color: transparent;
+  color: #4dd9ff;
+  border: 1px solid #4dd9ff;
 }
+
 /*--------------------------------------- footer .css */
 .footer {
-    width: 100%;
-    padding: 20px 50px;
+  width: 100%;
+  padding: 20px 50px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    color: #eaf6fd;
-    border-top: 1px solid #333;
+  color: #eaf6fd;
+  border-top: 1px solid #333;
 }
 
 .footer p {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .footer-links {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .footer-links a {
-    color: #eaf6fd;
-    text-decoration: none;
-    font-size: 15px;
+  color: #eaf6fd;
+  text-decoration: none;
+  font-size: 15px;
 }
 
 .footer-links a:hover {
-    color: #4dd9ff;
-    /* font-size: 17px; */
+  color: #4dd9ff;
+  /* font-size: 17px; */
 }
 
 /* Responsive Design */
 
 @media (max-width: 700px) {
 
-    .footer {
-        padding: 20px;
-        flex-direction: column;
-        gap: 15px;
-        align-items: flex-start;
-    }
+  .footer {
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
 
-    .footer-links {
-        flex-direction: column;
-        gap: 10px;
-    }
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 /*------------------------------------------------------about me.jsx*/
 .about {
-    width: 100%;
-    padding: 50px;
+  width: 100%;
+  padding: 50px;
 }
 
 /* Introduction */
 
 .about-intro {
-    max-width: 900px;
-    margin: 0 auto 60px;
-    text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  text-align: center;
 }
 
 .about-intro h1 {
-    color: #4dd9ff;
-    font-size: 35px;
-    margin-bottom: 20px;
+  color: #4dd9ff;
+  font-size: 35px;
+  margin-bottom: 20px;
 }
 
 .about-intro p {
-    color: #eaf6fd;
-    font-size: 18px;
-    line-height: 1.7;
+  color: #eaf6fd;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 
 /* Qualifications */
 
 .education {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 .education h2,
 .experience h2 {
-    color: #4dd9ff;
-    font-size: 28px;
-    margin-bottom: 25px;
+  color: #4dd9ff;
+  font-size: 28px;
+  margin-bottom: 25px;
 }
 
 .education-cards {
-    display: flex;
-    gap: 25px;
+  display: flex;
+  gap: 25px;
 }
 
 .education-card {
-    width: 33.33%;
-    padding: 25px;
+  width: 33.33%;
+  padding: 25px;
 
-    border: 1px solid #4dd9ff;
-    border-radius: 8px;
+  border: 1px solid #4dd9ff;
+  border-radius: 8px;
 
-    color: #eaf6fd;
+  color: #eaf6fd;
 }
 
 .education-card h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
+  font-size: 20px;
+  margin-bottom: 12px;
 }
 
 .education-card p {
-    color: #aaa;
+  color: #aaa;
 }
 
 
 /* Professional Experience */
 
 .experience-card {
-    width: 100%;
-    max-width: 700px;
+  width: 100%;
+  max-width: 700px;
 
-    padding: 25px;
+  padding: 25px;
 
-    border: 1px solid #4dd9ff;
-    border-radius: 8px;
+  border: 1px solid #4dd9ff;
+  border-radius: 8px;
 
-    color: #eaf6fd;
+  color: #eaf6fd;
 }
 
 .experience-card h3 {
-    font-size: 22px;
-    margin-bottom: 8px;
+  font-size: 22px;
+  margin-bottom: 8px;
 }
 
 .experience-card h4 {
-    color: #4dd9ff;
-    font-size: 17px;
-    margin-bottom: 15px;
+  color: #4dd9ff;
+  font-size: 17px;
+  margin-bottom: 15px;
 }
 
 .experience-card p {
-    color: #aaa;
-    line-height: 1.6;
+  color: #aaa;
+  line-height: 1.6;
 }
 
 
@@ -657,7 +709,7 @@ body {
 
 .education-card:hover,
 .experience-card:hover {
-    border-color: #eaf6fd;
+  border-color: #eaf6fd;
 }
 
 
@@ -665,54 +717,54 @@ body {
 
 @media (max-width: 700px) {
 
-    .about {
-        padding: 30px 20px;
-    }
+  .about {
+    padding: 30px 20px;
+  }
 
-    .about-intro h1 {
-        font-size: 30px;
-    }
+  .about-intro h1 {
+    font-size: 30px;
+  }
 
-    .about-intro p {
-        font-size: 16px;
-    }
+  .about-intro p {
+    font-size: 16px;
+  }
 
-    .education-cards {
-        flex-direction: column;
-    }
+  .education-cards {
+    flex-direction: column;
+  }
 
-    .education-card {
-        width: 100%;
-    }
+  .education-card {
+    width: 100%;
+  }
 
-    .experience-card {
-        width: 100%;
-    }
+  .experience-card {
+    width: 100%;
+  }
 }
 
 
 /* typing.css */
 .typing-box {
-    width: 100%;
-    max-width: 100%;
-    margin: 20px auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 20px auto;
 
-    text-align: center;
+  text-align: center;
 
-    color: #4dd9ff;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1.5;
+  color: #4dd9ff;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
 
-    overflow: hidden;
+  overflow: hidden;
 }
 
 #typing-text {
-    color: #4dd9ff !important;
+  color: #4dd9ff !important;
 }
 
 .typing-cursor {
-    color: #eaf6fd !important;
+  color: #eaf6fd !important;
 }
 
 
@@ -720,18 +772,18 @@ body {
 
 @media (max-width: 700px) {
 
-    .typing-box {
-        width: 100%;
-        max-width: 100%;
-        margin: 15px auto;
-        padding: 0 10px;
+  .typing-box {
+    width: 100%;
+    max-width: 100%;
+    margin: 15px auto;
+    padding: 0 10px;
 
-        text-align: center;
+    text-align: center;
 
-        font-size: 18px;
-        line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.5;
 
-        overflow: hidden;
-    }
+    overflow: hidden;
+  }
 
 }

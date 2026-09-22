@@ -1,29 +1,56 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
 
-    return (
-        <nav className="navbar">
+  
+  // "isOpen" remembers whether the menu is open (true) or closed (false).
+  const [isOpen, setIsOpen] = useState(false);
 
-            <div className="logo">
-                Syed Haris Hussain
-            </div>
+  // This runs when the button is clicked (replaces menuBtn.addEventListener)
+  function toggleMenu() {
+    setIsOpen(!isOpen); // flip true <-> false
+  }
 
-            <div className="nav-links">
+  // This runs when a nav link is clicked (replaces the links.forEach loop)
+  function closeMenu() {
+    setIsOpen(false);
+  }
 
-                <NavLink to="/">Home</NavLink>
+  return (
+    <nav className="navbar">
 
-                <NavLink to="/about">About Me</NavLink>
+      <div className="logo">
+        Syed Haris Hussain
+      </div>
 
-                <NavLink to="/projects">Projects</NavLink>
+      {/* we just check isOpen and add it directly in the className.*/}
+      <button
+        className={isOpen ? "menu-btn active" : "menu-btn"}
+        aria-label="Toggle navigation menu"
+        aria-expanded={isOpen}
+        onClick={toggleMenu}
+      >
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
 
-                <NavLink to="/contacts">Contact Me</NavLink>
+      {/* Same idea here — "open" class is added based on isOpen */}
+      <div className={isOpen ? "nav-links open" : "nav-links"}>
 
-            </div>
+        <NavLink to="/" onClick={closeMenu}>Home</NavLink>
 
-        </nav>
-    );
+        <NavLink to="/about" onClick={closeMenu}>About Me</NavLink>
 
+        <NavLink to="/projects" onClick={closeMenu}>Projects</NavLink>
+
+        <NavLink to="/contacts" onClick={closeMenu}>Contact Me</NavLink>
+
+      </div>
+
+    </nav>
+  );
 }
 
 export default Navbar;
