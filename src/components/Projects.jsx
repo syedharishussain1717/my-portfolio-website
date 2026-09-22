@@ -11,15 +11,28 @@ function Projects() {
                 {/* Project 1 */}
                 <div className="project-card">
 
-                    <h2>Portfolio Website</h2>
+                    <h2>MERN Stack Portfolio Website</h2>
 
                     <p>
-                        A responsive personal portfolio website with user-friendly
-                        layouts and interactive sections.
+                        Designed and developed a responsive personal portfolio website using React.js, Node.js, Express.js,
+                        and
+                        MongoDB.
+                    </p>
+                    <p>
+                        Implemented reusable components, React Router navigation, responsive layouts, project showcases, and
+                        an
+                        interactive contact form connected to a MongoDB database through a REST API.
+                    </p>
+                    <p>
+                        Configured environment variables and deployed the frontend and backend using Vercel, with MongoDB
+                        Atlas for
+                        cloud database management.
                     </p>
 
+
                     <p className="technologies">
-                        <strong>Technologies:</strong> HTML, CSS, JS, Bootstrap, React
+                        <strong>Technologies:</strong> React.js, JavaScript, HTML5, CSS3, Node.js, Express.js, MongoDB,
+                        Mongoose, REST API, React Router, Vercel, MongoDB Atlas, Git & GitHub.
                     </p>
 
                     <div className="project-links">
