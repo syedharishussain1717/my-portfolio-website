@@ -120,7 +120,7 @@ function Contact() {
 
                             <p>
                                 <strong>LinkedIn:</strong>
-                                <a href="#" target="_blank">LinkedIn Profile</a>
+                                <a href="#">LinkedIn Profile</a>
                             </p>
 
                             <p>
@@ -131,7 +131,7 @@ function Contact() {
 
                             <p>
                                 <strong>Instagram:</strong>
-                                <a href="#" target="_blank">Instagram Profile</a>
+                                <a href="#">Instagram Profile</a>
                             </p>
 
                         </div>
