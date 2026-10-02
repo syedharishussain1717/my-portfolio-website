@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 
 function TypingText() {
   const words = [
-    "Computer Science Enthusiast ",
-    "Web Developer ",
+    "Agentic AI Enthusiast ",
+    "Automation Builder ",
+    "MERN Stack Developer ",
     "Software Project Builder ",
     "Technology Explorer ",
     "Always Learning, Always Building "

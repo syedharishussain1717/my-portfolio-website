@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
 
-  
+
   // "isOpen" remembers whether the menu is open (true) or closed (false).
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,10 +21,9 @@ function Navbar() {
     <nav className="navbar">
 
       <div className="logo">
-        Syed Haris Hussain
+        Syed <span>Haris</span> Hussain
       </div>
 
-      {/* we just check isOpen and add it directly in the className.*/}
       <button
         className={isOpen ? "menu-btn active" : "menu-btn"}
         aria-label="Toggle navigation menu"
@@ -36,10 +35,9 @@ function Navbar() {
         <span className="bar"></span>
       </button>
 
-      {/* Same idea here — "open" class is added based on isOpen */}
       <div className={isOpen ? "nav-links open" : "nav-links"}>
 
-        <NavLink to="/" onClick={closeMenu}>Home</NavLink>
+        <NavLink to="/" end onClick={closeMenu}>Home</NavLink>
 
         <NavLink to="/about" onClick={closeMenu}>About Me</NavLink>
 
