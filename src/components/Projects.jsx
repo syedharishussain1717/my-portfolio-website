@@ -12,7 +12,7 @@ function Projects() {
 
                 {/* Project 4 */}
                 <div className="project-card">
-                    <span className="project-badge">Project</span>
+                    <span className="project-badge">Full Stack</span>
 
                     <h2>MERN Stack Portfolio Website</h2>
 
