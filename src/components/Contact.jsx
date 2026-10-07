@@ -102,7 +102,7 @@ function Contact() {
                             <span className="info-icon">✉️</span>
                             <span className="info-detail">
                                 <strong>Email</strong>
-                                syedharishussainshah17@gmail.com
+                                syed.haris.official.17@gmail.com
                             </span>
                         </a>
 

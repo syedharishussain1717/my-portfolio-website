@@ -204,8 +204,38 @@ function Projects() {
                     </div>
                 </div>
 
-                {/* next project cards go here */}
+                <div className="project-card">
+                    <span className="project-badge">AI / ML</span>
 
+                    <h2>RAG Chatbot</h2>
+
+                    <p>
+                        A simple Retrieval-Augmented Generation chatbot that answers questions
+                        from your own documents. Upload PDF or TXT files, and the app splits them
+                        into chunks, retrieves the most relevant ones with FAISS, and uses the
+                        Groq API to answer using only that context.
+                    </p>
+
+                    <div className="tech-tags">
+                        <span>Python</span>
+                        <span>Streamlit</span>
+                        <span>Groq API</span>
+                        <span>FAISS</span>
+                        <span>Hugging Face</span>
+                        <span>RAG</span>
+                    </div>
+
+                    <div className="project-links">
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-outline">
+                            GitHub
+                        </a>
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-filled">
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                {/* next project cards go here */}
 
             </div>
 
