@@ -297,7 +297,7 @@ function Projects() {
                         </a>
                     </div>
                 </div>
-
+                
                 {/* Project 10 */}
                 <div className="project-card">
                     <span className="project-badge">AI / ML</span>
