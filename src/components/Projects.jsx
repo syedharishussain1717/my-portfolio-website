@@ -8,9 +8,7 @@ function Projects() {
 
             <div className="project-cards">
 
-
-
-                {/* Project 4 */}
+                {/* Project 1 */}
                 <div className="project-card">
                     <span className="project-badge">Full Stack</span>
 
@@ -25,9 +23,6 @@ function Projects() {
                         Atlas for
                         cloud database management.
                     </p>
-
-
-
 
                     <div className="tech-tags">
                         <span>React.js</span>
@@ -54,11 +49,11 @@ function Projects() {
                     </div>
                 </div>
 
-
+                {/* Project 2 */}
                 <div className="project-card">
                     <span className="project-badge">Full Stack</span>
 
-                    <h2>WalletLenz</h2>
+                    <h2>WalletLenz - Personal Expense & Finance Management Platform</h2>
 
                     <p>
                         A full-stack personal expense management app built with the MERN stack.
@@ -89,121 +84,7 @@ function Projects() {
                     </div>
                 </div>
 
-                <div className="project-card">
-                    <span className="project-badge">AI / ML</span>
-
-                    <h2>AI Text-to-Image Generator</h2>
-
-                    <p>
-                        A simple Streamlit web app that generates images from text prompts
-                        using Stable Diffusion v1.5 from Hugging Face. Users type a prompt
-                        and get an AI-generated image in seconds.
-                    </p>
-
-                    <div className="tech-tags">
-                        <span>Python</span>
-                        <span>Streamlit</span>
-                        <span>Stable Diffusion v1.5</span>
-                        <span>Hugging Face</span>
-                    </div>
-
-                    <div className="project-links">
-                        <a href="#" target="_blank" rel="noreferrer" className="btn-outline">
-                            GitHub
-                        </a>
-                        <a href="#" target="_blank" rel="noreferrer" className="btn-filled">
-                            Live Demo
-                        </a>
-                    </div>
-                </div>
-
-                <div className="project-card">
-                    <span className="project-badge">AI / ML</span>
-
-                    <h2>AI Email Writer</h2>
-
-                    <p>
-                        A beginner-friendly Streamlit web app that turns a rough description
-                        into a short, polite, professional email. Type what you want to say,
-                        and the Groq API generates the email right on the page. Deployed on
-                        Streamlit Community Cloud with the API key kept safely in Secrets.
-                    </p>
-
-                    <div className="tech-tags">
-                        <span>Python</span>
-                        <span>Streamlit</span>
-                        <span>Groq API</span>
-                    </div>
-
-                    <div className="project-links">
-                        <a href="#" target="_blank" rel="noreferrer" className="btn-outline">
-                            GitHub
-                        </a>
-                        <a href="#" target="_blank" rel="noreferrer" className="btn-filled">
-                            Live Demo
-                        </a>
-                    </div>
-                </div>
-
-                <div className="project-card">
-                    <span className="project-badge">AI / ML</span>
-
-                    <h2>AI Essay Writer</h2>
-
-                    <p>
-                        A beginner-friendly Streamlit web app that writes a short, well-structured
-                        essay on any topic. Enter a topic, pick a length, and the Groq API
-                        generates an essay with an introduction, body paragraphs, and a conclusion
-                        right on the page. Deployed on Streamlit Community Cloud.
-                    </p>
-
-                    <div className="tech-tags">
-                        <span>Python</span>
-                        <span>Streamlit</span>
-                        <span>Groq API</span>
-                    </div>
-
-                    <div className="project-links">
-                        <a href="#" target="_blank" rel="noreferrer" className="btn-outline">
-                            GitHub
-                        </a>
-                        <a href="#" target="_blank" rel="noreferrer" className="btn-filled">
-                            Live Demo
-                        </a>
-                    </div>
-                </div>
-
-                <div className="project-card">
-                    <span className="project-badge">AI / ML</span>
-
-                    <h2>Dialogue Summarizer</h2>
-
-                    <p>
-                        An AI-powered text summarization web app built with Python, Hugging Face
-                        Transformers, and Streamlit. It uses a DistilGPT2 model fine-tuned on the
-                        SAMSum dataset to turn conversations into short summaries. The model is
-                        hosted on Hugging Face.
-                    </p>
-
-                    <div className="tech-tags">
-                        <span>Python</span>
-                        <span>Transformers</span>
-                        <span>DistilGPT2</span>
-                        <span>PyTorch</span>
-                        <span>Streamlit</span>
-                        <span>SAMSum</span>
-                    </div>
-
-                    <div className="project-links">
-                        <a href="#" target="_blank" rel="noreferrer" className="btn-outline">
-                            GitHub
-                        </a>
-                        <a href="#" target="_blank" rel="noreferrer" className="btn-filled">
-                            Live Demo
-                        </a>
-                    </div>
-                </div>
-
+                {/* Project 3 */}
                 <div className="project-card">
                     <span className="project-badge">AI / ML</span>
 
@@ -235,6 +116,219 @@ function Projects() {
                     </div>
                 </div>
 
+                {/* Project 4 */}
+                <div className="project-card">
+                    <span className="project-badge">AI / ML</span>
+
+                    <h2>AI Quiz Generator</h2>
+
+                    <p>
+                        A simple RAG app that turns your study notes into an interactive
+                        multiple-choice quiz. Upload PDF or TXT notes, optionally enter a topic,
+                        and the Groq API writes questions using only your text. Submit your
+                        answers to see your score with explanations.
+                    </p>
+
+                    <div className="tech-tags">
+                        <span>Python</span>
+                        <span>Streamlit</span>
+                        <span>Groq API</span>
+                        <span>Hugging Face</span>
+                        <span>NumPy</span>
+                        <span>RAG</span>
+                    </div>
+
+                    <div className="project-links">
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-outline">
+                            GitHub
+                        </a>
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-filled">
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                {/* Project 5 */}
+                <div className="project-card">
+                    <span className="project-badge">AI / ML</span>
+
+                    <h2>AI Research Agent</h2>
+
+                    <p>
+                        A beginner-friendly AI research agent built with CrewAI. Enter a topic,
+                        and the agent searches the web with DuckDuckGo, analyzes what it finds
+                        using Groq, and generates a structured Markdown research report. The
+                        report is shown in Streamlit and can be downloaded.
+                    </p>
+
+                    <div className="tech-tags">
+                        <span>Python</span>
+                        <span>CrewAI</span>
+                        <span>Groq API</span>
+                        <span>DuckDuckGo</span>
+                        <span>Streamlit</span>
+                    </div>
+
+                    <div className="project-links">
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-outline">
+                            GitHub
+                        </a>
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-filled">
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                {/* Project 6 */}
+
+                <div className="project-card">
+                    <span className="project-badge">Agentic AI</span>
+
+                    <h2>AI Research Team</h2>
+
+                    <p>
+                        A multi-agent system where four AI agents work one after another to
+                        research a topic and write a report: a Research Planner, Web Researcher,
+                        Research Analyst, and Report Writer. Built with CrewAI and Groq, and
+                        deployed on Streamlit Community Cloud.
+                    </p>
+
+                    <div className="tech-tags">
+                        <span>Python</span>
+                        <span>CrewAI</span>
+                        <span>Groq API</span>
+                        <span>Multi-Agent</span>
+                        <span>Streamlit</span>
+                    </div>
+
+                    <div className="project-links">
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-outline">
+                            GitHub
+                        </a>
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-filled">
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                {/* Project 7 */}
+                <div className="project-card">
+                    <span className="project-badge">AI / ML</span>
+
+                    <h2>AI Text-to-Image Generator</h2>
+
+                    <p>
+                        A simple Streamlit web app that generates images from text prompts
+                        using Stable Diffusion v1.5 from Hugging Face. Users type a prompt
+                        and get an AI-generated image in seconds.
+                    </p>
+
+                    <div className="tech-tags">
+                        <span>Python</span>
+                        <span>Streamlit</span>
+                        <span>Stable Diffusion v1.5</span>
+                        <span>Hugging Face</span>
+                    </div>
+
+                    <div className="project-links">
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-outline">
+                            GitHub
+                        </a>
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-filled">
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+                
+                {/* Project 8 */}
+                <div className="project-card">
+                    <span className="project-badge">AI / ML</span>
+
+                    <h2>AI Email Writer</h2>
+
+                    <p>
+                        A beginner-friendly Streamlit web app that turns a rough description
+                        into a short, polite, professional email. Type what you want to say,
+                        and the Groq API generates the email right on the page. Deployed on
+                        Streamlit Community Cloud with the API key kept safely in Secrets.
+                    </p>
+
+                    <div className="tech-tags">
+                        <span>Python</span>
+                        <span>Streamlit</span>
+                        <span>Groq API</span>
+                    </div>
+
+                    <div className="project-links">
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-outline">
+                            GitHub
+                        </a>
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-filled">
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                {/* Project 9 */}
+                <div className="project-card">
+                    <span className="project-badge">AI / ML</span>
+
+                    <h2>AI Essay Writer</h2>
+
+                    <p>
+                        A beginner-friendly Streamlit web app that writes a short, well-structured
+                        essay on any topic. Enter a topic, pick a length, and the Groq API
+                        generates an essay with an introduction, body paragraphs, and a conclusion
+                        right on the page. Deployed on Streamlit Community Cloud.
+                    </p>
+
+                    <div className="tech-tags">
+                        <span>Python</span>
+                        <span>Streamlit</span>
+                        <span>Groq API</span>
+                    </div>
+
+                    <div className="project-links">
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-outline">
+                            GitHub
+                        </a>
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-filled">
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                {/* Project 10 */}
+                <div className="project-card">
+                    <span className="project-badge">AI / ML</span>
+
+                    <h2>Dialogue Summarizer</h2>
+
+                    <p>
+                        An AI-powered text summarization web app built with Python, Hugging Face
+                        Transformers, and Streamlit. It uses a DistilGPT2 model fine-tuned on the
+                        SAMSum dataset to turn conversations into short summaries. The model is
+                        hosted on Hugging Face.
+                    </p>
+
+                    <div className="tech-tags">
+                        <span>Python</span>
+                        <span>Transformers</span>
+                        <span>DistilGPT2</span>
+                        <span>PyTorch</span>
+                        <span>Streamlit</span>
+                        <span>SAMSum</span>
+                    </div>
+
+                    <div className="project-links">
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-outline">
+                            GitHub
+                        </a>
+                        <a href="#" target="_blank" rel="noreferrer" className="btn-filled">
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
                 {/* next project cards go here */}
 
             </div>
