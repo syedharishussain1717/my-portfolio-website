@@ -1550,7 +1550,9 @@ body {
 .about,
 .about-intro,
 .education-card,
-.experience-card {
+.exp-timeline,
+.exp-item,
+.exp-head {
   box-sizing: border-box;
 }
 
@@ -1611,10 +1613,9 @@ body {
   background: linear-gradient(90deg, rgba(77, 217, 255, 0.6), transparent);
 }
 
-/* Shared card look */
+/* Card look (qualifications) */
 
-.education-card,
-.experience-card {
+.education-card {
   position: relative;
   overflow: hidden;
 
@@ -1628,8 +1629,7 @@ body {
   animation: aboutFadeUp 0.8s ease both;
 }
 
-.education-card:hover,
-.experience-card:hover {
+.education-card:hover {
   transform: translateY(-6px);
   border-color: #eaf6fd;
   box-shadow: 0 12px 32px rgba(77, 217, 255, 0.22);
@@ -1696,36 +1696,127 @@ body {
   line-height: 1.5;
 }
 
-/* Professional Experience */
+/* Professional Experience (timeline) */
 
-.experience-card {
-  width: 100%;
+.exp-timeline {
+  position: relative;
   max-width: 900px;
-  padding: 30px 30px 26px 34px;
+  padding-left: 34px;
 }
 
-/* Left accent bar */
-.experience-card::before {
+/* Vertical glowing line */
+.exp-timeline::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
+  left: 9px;
+  top: 8px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #4dd9ff, rgba(77, 217, 255, 0.05));
+  box-shadow: 0 0 10px rgba(77, 217, 255, 0.4);
+}
+
+.exp-item {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 36px;
+  animation: expFadeUp 0.8s ease backwards;
+}
+
+.exp-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Dot on the line */
+.exp-dot {
+  position: absolute;
+  top: 6px;
+  left: -34px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  background: #4dd9ff;
+  box-shadow: 0 0 0 5px rgba(77, 217, 255, 0.15),
+    0 0 14px rgba(77, 217, 255, 0.7);
+
+  transition: transform 0.3s ease;
+}
+
+.exp-item:hover .exp-dot {
+  transform: scale(1.15);
+}
+
+/* Header: logo + title */
+.exp-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.exp-timeline .exp-logo {
+  flex: 0 0 58px;
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+  border: 1px solid rgba(77, 217, 255, 0.45);
+  border-radius: 14px;
+  box-shadow: 0 0 14px rgba(77, 217, 255, 0.25);
+}
+
+.exp-timeline .exp-logo img {
+  width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, #4dd9ff, rgba(77, 217, 255, 0.1));
-  box-shadow: 0 0 14px rgba(77, 217, 255, 0.6);
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
 }
 
-.experience-card h3 {
+.exp-title {
+  min-width: 0;
+}
+
+.exp-title h3 {
+  color: #eaf6fd;
   font-size: 24px;
-  margin-bottom: 8px;
+  line-height: 1.3;
+  margin: 0 0 4px;
+  transition: color 0.3s ease;
 }
 
-.experience-card h4 {
+.exp-item:hover .exp-title h3 {
+  color: #4dd9ff;
+}
+
+.exp-title h4 {
   color: #4dd9ff;
   font-size: 17px;
   font-weight: 500;
-  margin-bottom: 18px;
+  line-height: 1.4;
+  margin: 0 0 10px;
+}
+
+.exp-type,
+.exp-date {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 3px 12px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #aaa;
+  border: 1px solid rgba(77, 217, 255, 0.3);
+  border-radius: 20px;
 }
 
 /* Rotation pills */
@@ -1806,11 +1897,23 @@ body {
   }
 }
 
+@keyframes expFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
 
   .about-intro,
   .education-card,
-  .experience-card {
+  .exp-item {
     animation: none;
   }
 }
@@ -1827,6 +1930,10 @@ body {
 
   .education-card {
     width: calc(50% - 13px);
+  }
+
+  .exp-timeline {
+    max-width: 100%;
   }
 }
 
@@ -1871,12 +1978,50 @@ body {
     padding: 22px 18px;
   }
 
-  .experience-card {
-    padding: 22px 16px 20px 22px;
+  /* Experience timeline */
+
+  .exp-timeline {
+    padding-left: 28px;
   }
 
-  .experience-card h3 {
-    font-size: 21px;
+  .exp-timeline::before {
+    left: 6px;
+  }
+
+  .exp-dot {
+    left: -28px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    box-shadow: 0 0 0 4px rgba(77, 217, 255, 0.15),
+      0 0 12px rgba(77, 217, 255, 0.7);
+  }
+
+  .exp-item {
+    margin-bottom: 28px;
+  }
+
+  .exp-head {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 700px) {
+    .exp-timeline .exp-logo {
+      flex-basis: 46px;
+      width: 46px;
+      height: 46px;
+      min-width: 46px;
+      border-radius: 12px;
+    }
+  }
+
+  .exp-title h3 {
+    font-size: 20px;
+  }
+
+  .exp-title h4 {
+    font-size: 15px;
   }
 
   .exp-tags span {
@@ -1893,8 +2038,7 @@ body {
 /* Touch devices: no sticky hover */
 @media (hover: none) {
 
-  .education-card:hover,
-  .experience-card:hover {
+  .education-card:hover {
     transform: none;
     border-color: rgba(77, 217, 255, 0.45);
     box-shadow: none;
@@ -1906,6 +2050,14 @@ body {
 
   .education-card:hover::after {
     opacity: 0;
+  }
+
+  .exp-item:hover .exp-dot {
+    transform: none;
+  }
+
+  .exp-item:hover .exp-title h3 {
+    color: #eaf6fd;
   }
 }
 
